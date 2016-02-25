@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,21 +29,24 @@ public class MainActivity extends AppCompatActivity {
     private String[] capital = {"delhi1", "tokyo2","india3", "japan4","india5", "japan6","india7", "japan8","india9", "japan10","india11", "japan12","india", "japan","india", "japan","india", "japan","india", "japan","india", "japan","india", "japan","india", "japan","india", "japan","india", "japan"};
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        int current;
+        //int current;
         //iterate every 10 items and populate the
-        for(current=0; current<country.length; current++){
-            adapter = new RecyclerAdapter(country, capital);
-            current+=10;
-        }
+        //need to figure out a way to pass information as an array since RecyclerAdapter won't take it that way
+
+        //for(current=0; current<10; current++){
+        //    adapter = new RecyclerAdapter(country, capital);
+        //}
 
         //populate view
-        //adapter = new RecyclerAdapter(country, capital);
+        adapter = new RecyclerAdapter(country, capital);
 
 
         layoutManager = new LinearLayoutManager(this);
